@@ -1,3 +1,5 @@
+import category from "../seed/category";
+
 export default {
   /**
    * An asynchronous register function that runs before
@@ -14,5 +16,20 @@ export default {
    * This gives you an opportunity to set up your data model,
    * run jobs, or perform some special logic.
    */
-  bootstrap(/*{ strapi }*/) {},
+  bootstrap(/*{ strapi }*/) {
+    const { createCoreController } = require("@strapi/strapi").factories;
+
+    const seed = async (collection, data) => {
+      try {
+        const count = await  strapi.query(`api::${collection}.${collection}`).count();
+        if (count === 0){
+          // data.forEach(item =>  strapi.entityService.create(`api::${collection}.${collection}`, item))
+        }
+      } catch (e) {
+        console.error('Failed to seed the data', e);
+      }
+    }
+     seed('category', category).then(e => console.log('category data',e));
+
+  },
 };
