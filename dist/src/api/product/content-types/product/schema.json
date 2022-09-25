@@ -25,7 +25,7 @@
             "type": "decimal",
             "required": true
         },
-        "descriotion": {
+        "description": {
             "type": "richtext"
         },
         "photo": {
