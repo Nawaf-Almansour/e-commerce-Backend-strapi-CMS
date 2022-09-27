@@ -6,8 +6,7 @@ export default {
   beforeCreate(event) {
     const date = new Date();
     console.log(date);
-    event.params.data.code = `${date.getFullYear()}
-    ${date.getMonth() + 1
+    event.params.data.code = `${date.getFullYear()}${date.getMonth() + 1
     }${date.getDate()}-${getRandomNumber()}${getRandomNumber()}${getRandomNumber()}`;
   }
 };
