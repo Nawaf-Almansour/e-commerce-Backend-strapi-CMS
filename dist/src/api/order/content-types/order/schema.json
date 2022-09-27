@@ -1,0 +1,48 @@
+{
+    "kind": "collectionType",
+    "collectionName": "orders",
+    "info": {
+        "singularName": "order",
+        "pluralName": "orders",
+        "displayName": "order",
+        "description": ""
+    },
+    "options": {
+        "draftAndPublish": true
+    },
+    "pluginOptions": {},
+    "attributes": {
+        "firstname": {
+            "type": "string",
+            "required": false
+        },
+        "lastname": {
+            "type": "string"
+        },
+        "email": {
+            "type": "email"
+        },
+        "phone": {
+            "type": "string"
+        },
+        "status": {
+            "type": "enumeration",
+            "enum": [
+                "payment required",
+                "payed",
+                " refunded ",
+                "canceled"
+            ],
+            "default": "payment required"
+        },
+        "total": {
+            "type": "string"
+        },
+        "address": {
+            "type": "text"
+        },
+        "code": {
+            "type": "string"
+        }
+    }
+}
